@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Grok Chain">
+  <defs>
+    <linearGradient id="ion" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0BA34"/>
+      <stop offset="42%" stop-color="#F4E8C4"/>
+      <stop offset="100%" stop-color="#4824A0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#07070A"/>
+  <path fill="url(#ion)" fill-rule="evenodd" d="M424.00,256.00 L340.00,401.49 L172.00,401.49 L88.00,256.00 L172.00,110.51 L340.00,110.51 Z M364.00,256.00 L310.00,349.53 L202.00,349.53 L148.00,256.00 L202.00,162.47 L310.00,162.47 Z"/>
+  <path fill="url(#ion)" d="M256,218 L286,256 L256,294 L226,256 Z"/>
+</svg>
