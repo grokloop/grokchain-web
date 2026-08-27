@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" width="1600" height="900" role="img">
+  <defs>
+    <linearGradient id="gas-dark-ion" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0BA34"/>
+      <stop offset="42%" stop-color="#F4E8C4"/>
+      <stop offset="100%" stop-color="#4824A0"/>
+    </linearGradient>
+    <marker id="gas-dark-chev" markerWidth="14" markerHeight="14" refX="12" refY="7"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.5,1.5 L12,7 L1.5,12.5" fill="none" stroke="#F0BA34"
+            stroke-width="2.25" stroke-linejoin="miter" stroke-linecap="butt"/>
+    </marker>
+    <symbol id="gas-dark-mark" viewBox="0 0 512 512">
+      <path fill="url(#gas-dark-ion)" fill-rule="evenodd" d="M456.00,256.00 L356.00,429.21 L156.00,429.21 L56.00,256.00 L156.00,82.79 L356.00,82.79 Z M384.00,256.00 L320.00,366.85 L192.00,366.85 L128.00,256.00 L192.00,145.15 L320.00,145.15 Z"/>
+      <path fill="url(#gas-dark-ion)" d="M256,206 L292,256 L256,306 L220,256 Z"/>
+    </symbol>
+    <symbol id="gas-dark-dia" viewBox="0 0 512 512">
+      <path fill="url(#gas-dark-ion)" d="M256,206 L292,256 L256,306 L220,256 Z"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="900" fill="#07070A"/>
+  <text x="64" y="58" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="24"
+        letter-spacing="4" fill="#F0BA34">GAS</text>
+  <use href="#gas-dark-mark" xlink:href="#gas-dark-mark" x="1472" y="24" width="64" height="64"/>
+  <line x1="64" y1="820" x2="1536" y2="820" stroke="#2A2A32" stroke-width="1"/>
+  <text x="800" y="858" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400"
+        font-size="24" fill="#F4E8C4">The bot never pays the fee. The human-funded paymaster does.</text>
+
+  <rect x="80.0" y="160.0" width="292.0" height="176.0" rx="16" ry="16" fill="#0E0E14" stroke="#2A2A32" stroke-width="2"/>
+  <circle cx="226.0" cy="216.0" r="20" fill="none" stroke="#F0BA34" stroke-width="2.25"/>
+  <circle cx="226.0" cy="216.0" r="7.5" fill="#F0BA34"/>
+  <text x="226.0" y="284.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#F4E8C4" letter-spacing="2.2">HUMAN</text>
+  <rect x="80.0" y="564.0" width="292.0" height="176.0" rx="16" ry="16" fill="#0E0E14" stroke="#2A2A32" stroke-width="2"/>
+  <use href="#gas-dark-dia" xlink:href="#gas-dark-dia" x="113.4" y="507.4" width="225.3" height="225.3"/>
+  <text x="226.0" y="688.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#F4E8C4" letter-spacing="2.6">BOT</text>
+  <rect x="608.0" y="292.0" width="384.0" height="316.0" rx="16" ry="16" fill="#0E0E14" stroke="#F0BA34" stroke-width="2.25"/>
+  <use href="#gas-dark-mark" xlink:href="#gas-dark-mark" x="734.0" y="322.0" width="132.0" height="132.0"/>
+  <text x="800.0" y="506.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#F4E8C4" letter-spacing="2.0">PAYMASTER</text>
+  <text x="800.0" y="546.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400" font-size="20" fill="#9A9078">human-funded</text>
+  <rect x="1216.0" y="340.0" width="308.0" height="220.0" rx="16" ry="16" fill="#0E0E14" stroke="#2A2A32" stroke-width="2"/>
+  <text x="1370.0" y="440.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#F4E8C4" letter-spacing="1.6">SOLANA L1</text>
+  <text x="1370.0" y="480.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400" font-size="20" fill="#9A9078">fee paid here</text>
+  <path d="M378.0,248.0 C512.0,248.0 518.0,378.0 602.0,388.0" fill="none" stroke="#F0BA34" stroke-width="2.25" stroke-linejoin="round" marker-end="url(#gas-dark-chev)"/>
+  <text x="488.0" y="208.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#F0BA34" letter-spacing="2.2">funds</text>
+  <path d="M378.0,652.0 C512.0,652.0 518.0,522.0 602.0,512.0" fill="none" stroke="#F0BA34" stroke-width="2.25" stroke-linejoin="round" marker-end="url(#gas-dark-chev)"/>
+  <text x="488.0" y="708.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#F0BA34" letter-spacing="2.2">intent</text>
+  <line x1="998.0" y1="450.0" x2="1210.0" y2="450.0" stroke="#F0BA34" stroke-width="2.25" marker-end="url(#gas-dark-chev)"/>
+  <text x="1104.0" y="430.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#F0BA34" letter-spacing="1.8">pays fee</text>
+</svg>

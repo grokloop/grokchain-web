@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Mark } from "@/components/Mark";
-import { benefits, hero, howItWorks, manifesto, nav } from "@/lib/copy";
+import { CopyTicker } from "@/components/CopyTicker";
+import { hero, install, status, token } from "@/lib/copy";
 
 export default function HomePage() {
   return (
@@ -16,6 +16,12 @@ export default function HomePage() {
             <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.32em] text-ion">
               Solana-settled SVM
             </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <CopyTicker />
+              <p className="break-all font-mono text-[11px] leading-6 tracking-[0.04em] text-frost/55">
+                {token.ca}
+              </p>
+            </div>
             <h1 className="mt-4 font-display text-5xl leading-[0.95] text-frost sm:text-7xl lg:text-8xl">
               {hero.line}
             </h1>
@@ -24,74 +30,50 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/access"
+                href="#install"
                 className="inline-flex items-center justify-center bg-ion px-6 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink hover:bg-frost"
               >
-                Read the access layer
-              </Link>
-              <Link
-                href="/lore"
-                className="inline-flex items-center justify-center border border-frost/25 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-frost hover:border-ion hover:text-ion"
-              >
-                The lore
+                Install
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="site-shell py-8">
+      <section id="install" className="site-shell py-16">
+        <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-ion">
+          {install.kicker}
+        </p>
+        <h2 className="mt-4 max-w-4xl font-display text-3xl leading-tight text-frost sm:text-5xl">
+          {install.title}
+        </h2>
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-frost/70">
+          {install.body}
+        </p>
+        <pre className="mt-8 overflow-x-auto border border-frost/12 bg-ink/50 px-5 py-5 font-mono text-sm leading-7 text-frost sm:text-base">
+          <code>{install.commands}</code>
+        </pre>
+        <p className="mt-6 max-w-2xl leading-8 text-frost/70">
+          {install.afterLead}{" "}
+          <code className="font-mono text-sm text-ion">{install.mcp}</code>
+          . {install.afterClose}
+        </p>
+        <Link
+          href={install.docsHref}
+          className="mt-6 inline-flex font-mono text-[11px] uppercase tracking-[0.2em] text-ion hover:text-frost"
+        >
+          {install.docsLabel}
+        </Link>
+      </section>
+
+      <section className="site-shell pb-20">
         <div className="ion-rule mb-10" />
-        <p className="font-display text-2xl text-frost/80 sm:text-4xl">{hero.alt}</p>
-        <p className="mt-4 max-w-2xl text-frost/55">{hero.altSub}</p>
-      </section>
-
-      <section className="site-shell grid gap-4 py-16 sm:grid-cols-2">
-        {howItWorks.map((item) => (
-          <p key={item} className="border border-frost/12 bg-ink/30 px-6 py-8 font-display text-2xl leading-snug text-frost">
-            {item}
-          </p>
-        ))}
-      </section>
-
-      <section className="site-shell py-8">
-        <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-ion">Benefits</p>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {benefits.map((item) => (
-            <h2 key={item} className="font-display text-3xl leading-tight text-frost sm:text-4xl">
-              {item}
-            </h2>
-          ))}
-        </div>
-      </section>
-
-      <section className="site-shell py-20">
-        <div className="flex items-end justify-between gap-6">
-          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-ion">Manifesto</p>
-          <Mark className="h-8 w-8 opacity-80" />
-        </div>
-        <div className="mt-8 grid gap-3">
-          {manifesto.map((line) => (
-            <p key={line} className="font-display text-2xl leading-snug text-frost sm:text-3xl">
-              {line}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      <section className="site-shell pb-8">
-        <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-ion">Jumps</p>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="border border-frost/12 px-5 py-5 font-mono text-[11px] uppercase tracking-[0.2em] text-frost/70 hover:border-ion hover:text-ion"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
+        <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-ion">
+          {status.kicker}
+        </p>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-frost/70">
+          {status.line}
+        </p>
       </section>
     </div>
   );

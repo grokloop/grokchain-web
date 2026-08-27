@@ -24,11 +24,21 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thegrokchain.com"),
   title: {
     default: "Grok Chain",
     template: "%s — Grok Chain",
   },
   description: hero.sub,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    url: "https://thegrokchain.com",
+    title: "Grok Chain",
+    description: hero.sub,
+    siteName: "Grok Chain",
+  },
   icons: {
     icon: [
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },

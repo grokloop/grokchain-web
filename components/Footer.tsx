@@ -29,6 +29,11 @@ export function Footer() {
         </div>
       </div>
       <div className="site-shell border-t border-frost/10 py-6">
+        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.16em] text-frost/45">
+          <a href="https://thegrokchain.com" className="hover:text-ion">
+            thegrokchain.com
+          </a>
+        </p>
         <p className="max-w-3xl font-mono text-[10px] leading-5 tracking-[0.04em] text-frost/40">
           {legal}
         </p>

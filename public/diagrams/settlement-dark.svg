@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" width="1600" height="900" role="img">
+  <defs>
+    <linearGradient id="settlement-dark-ion" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0BA34"/>
+      <stop offset="42%" stop-color="#F4E8C4"/>
+      <stop offset="100%" stop-color="#4824A0"/>
+    </linearGradient>
+    <marker id="settlement-dark-chev" markerWidth="14" markerHeight="14" refX="12" refY="7"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.5,1.5 L12,7 L1.5,12.5" fill="none" stroke="#F0BA34"
+            stroke-width="2.25" stroke-linejoin="miter" stroke-linecap="butt"/>
+    </marker>
+    <symbol id="settlement-dark-mark" viewBox="0 0 512 512">
+      <path fill="url(#settlement-dark-ion)" fill-rule="evenodd" d="M456.00,256.00 L356.00,429.21 L156.00,429.21 L56.00,256.00 L156.00,82.79 L356.00,82.79 Z M384.00,256.00 L320.00,366.85 L192.00,366.85 L128.00,256.00 L192.00,145.15 L320.00,145.15 Z"/>
+      <path fill="url(#settlement-dark-ion)" d="M256,206 L292,256 L256,306 L220,256 Z"/>
+    </symbol>
+    <symbol id="settlement-dark-dia" viewBox="0 0 512 512">
+      <path fill="url(#settlement-dark-ion)" d="M256,206 L292,256 L256,306 L220,256 Z"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="900" fill="#07070A"/>
+  <text x="64" y="58" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="24"
+        letter-spacing="8" fill="#F0BA34">SETTLEMENT</text>
+  <use href="#settlement-dark-mark" xlink:href="#settlement-dark-mark" x="1472" y="24" width="64" height="64"/>
+  <line x1="64" y1="820" x2="1536" y2="820" stroke="#2A2A32" stroke-width="1"/>
+  <text x="800" y="858" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400"
+        font-size="24" fill="#F4E8C4">Settles on Solana L1. Sequencer is later.</text>
+
+  <rect x="174.0" y="236.0" width="348.0" height="280.0" rx="16" ry="16" fill="#0E0E14" stroke="#2A2A32" stroke-width="2"/>
+  <rect x="308.0" y="294.0" width="80" height="32" rx="16" ry="16" fill="none" stroke="#F0BA34" stroke-width="2.25"/>
+  <path d="M360.0,302.0 L374.0,310.0 L360.0,318.0" fill="none" stroke="#F0BA34" stroke-width="2.25"/>
+  <text x="348.0" y="392.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#F4E8C4" letter-spacing="1.6">BOT MOUTH</text>
+  <text x="348.0" y="432.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#F0BA34" letter-spacing="3.2">MCP</text>
+  <rect x="626.0" y="236.0" width="348.0" height="280.0" rx="16" ry="16" fill="#0E0E14" stroke="#F0BA34" stroke-width="2.25"/>
+  <use href="#settlement-dark-mark" xlink:href="#settlement-dark-mark" x="754.0" y="268.0" width="92.0" height="92.0"/>
+  <text x="800.0" y="392.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="#F4E8C4" letter-spacing="1.4">GRANT CHECK</text>
+  <text x="800.0" y="432.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400" font-size="18" fill="#9A9078">cap · allowlist · expiry</text>
+  <rect x="1078.0" y="236.0" width="348.0" height="280.0" rx="16" ry="16" fill="#0E0E14" stroke="#2A2A32" stroke-width="2"/>
+  <text x="1252.0" y="368.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#F4E8C4" letter-spacing="1.6">SOLANA L1</text>
+  <text x="1252.0" y="408.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400" font-size="20" fill="#9A9078">settlement</text>
+  <line x1="528.0" y1="376.0" x2="620.0" y2="376.0" stroke="#F0BA34" stroke-width="2.25" marker-end="url(#settlement-dark-chev)"/>
+  <line x1="980.0" y1="376.0" x2="1072.0" y2="376.0" stroke="#F0BA34" stroke-width="2.25" marker-end="url(#settlement-dark-chev)"/>
+  <rect x="660.0" y="612.0" width="280.0" height="124.0" rx="16" ry="16" fill="#0A0A10" stroke="#3A3A44" stroke-width="2" stroke-dasharray="7 6"/>
+  <line x1="800.0" y1="524.0" x2="800.0" y2="604.0" stroke="#3A3A44" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <text x="800.0" y="662.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#8A8478" letter-spacing="2.4">SEQUENCER</text>
+  <rect x="748.0" y="678.0" width="104.0" height="32.0" rx="16" ry="16" fill="none" stroke="#F0BA34" stroke-width="1.75"/>
+  <text x="800.0" y="700.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="15" fill="#F0BA34" letter-spacing="2.6">LATER</text>
+</svg>

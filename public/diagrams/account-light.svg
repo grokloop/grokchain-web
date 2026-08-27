@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" width="1600" height="900" role="img">
+  <defs>
+    <marker id="account-light-chev" markerWidth="14" markerHeight="14" refX="12" refY="7"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.5,1.5 L12,7 L1.5,12.5" fill="none" stroke="#0B0B0E"
+            stroke-width="2.25" stroke-linejoin="miter" stroke-linecap="butt"/>
+    </marker>
+    <symbol id="account-light-mark" viewBox="0 0 512 512">
+      <path fill="#0B0B0E" fill-rule="evenodd" d="M456.00,256.00 L356.00,429.21 L156.00,429.21 L56.00,256.00 L156.00,82.79 L356.00,82.79 Z M384.00,256.00 L320.00,366.85 L192.00,366.85 L128.00,256.00 L192.00,145.15 L320.00,145.15 Z"/>
+      <path fill="#0B0B0E" d="M256,206 L292,256 L256,306 L220,256 Z"/>
+    </symbol>
+    <symbol id="account-light-dia" viewBox="0 0 512 512">
+      <path fill="#0B0B0E" d="M256,206 L292,256 L256,306 L220,256 Z"/>
+    </symbol>
+  </defs>
+  <rect width="1600" height="900" fill="#F3EFE6"/>
+  <text x="64" y="58" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="24"
+        letter-spacing="8" fill="#0B0B0E">ACCOUNT</text>
+  <use href="#account-light-mark" xlink:href="#account-light-mark" x="1472" y="24" width="64" height="64"/>
+  <line x1="64" y1="820" x2="1536" y2="820" stroke="#C8C2B6" stroke-width="1"/>
+  <text x="800" y="858" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400"
+        font-size="24" fill="#0B0B0E">Agent never holds a key.</text>
+
+  <rect x="123.0" y="200.0" width="280.0" height="380.0" rx="16" ry="16" fill="#FFFCF6" stroke="#0B0B0E" stroke-width="2"/>
+  <circle cx="263.0" cy="318.0" r="36" fill="none" stroke="#F0BA34" stroke-width="2.5"/>
+  <circle cx="263.0" cy="318.0" r="13" fill="#F0BA34"/>
+  <text x="263.0" y="448.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="#0B0B0E" letter-spacing="1.2">HUMAN ROOT</text>
+  <text x="263.0" y="484.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400" font-size="20" fill="#4A463C">wallet / key holder</text>
+  <rect x="481.0" y="200.0" width="280.0" height="380.0" rx="16" ry="16" fill="#FFFCF6" stroke="#4824A0" stroke-width="2.25"/>
+  <use href="#account-light-mark" xlink:href="#account-light-mark" x="559.0" y="256.0" width="124.0" height="124.0"/>
+  <text x="621.0" y="448.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="24" fill="#0B0B0E" letter-spacing="0.9">GROK ACCOUNT</text>
+  <rect x="839.0" y="200.0" width="280.0" height="380.0" rx="16" ry="16" fill="#FFFCF6" stroke="#0B0B0E" stroke-width="2"/>
+  <rect x="877.0" y="245.0" width="204.0" height="42.0" rx="8" ry="8" fill="#F7F1E2" stroke="#0B0B0E" stroke-width="1.75"/>
+  <text x="979.0" y="273.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="17" fill="#0B0B0E" letter-spacing="2.2">CAP</text>
+  <rect x="877.0" y="297.0" width="204.0" height="42.0" rx="8" ry="8" fill="#F7F1E2" stroke="#0B0B0E" stroke-width="1.75"/>
+  <text x="979.0" y="325.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="17" fill="#0B0B0E" letter-spacing="2.2">ALLOWLIST</text>
+  <rect x="877.0" y="349.0" width="204.0" height="42.0" rx="8" ry="8" fill="#F7F1E2" stroke="#0B0B0E" stroke-width="1.75"/>
+  <text x="979.0" y="377.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="17" fill="#0B0B0E" letter-spacing="2.2">EXPIRY</text>
+  <text x="979.0" y="448.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="#0B0B0E" letter-spacing="2.2">GRANT</text>
+  <rect x="1197.0" y="200.0" width="280.0" height="380.0" rx="16" ry="16" fill="#FFFCF6" stroke="#0B0B0E" stroke-width="2"/>
+  <use href="#account-light-dia" xlink:href="#account-light-dia" x="1137.3" y="118.3" width="399.4" height="399.4"/>
+  <text x="1337.0" y="448.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="#0B0B0E" letter-spacing="2.4">AGENT</text>
+  <text x="1337.0" y="484.0" text-anchor="middle" font-family="Liberation Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="400" font-size="20" fill="#4A463C">no key</text>
+  <line x1="411.0" y1="390.0" x2="473.0" y2="390.0" stroke="#0B0B0E" stroke-width="2.25" marker-end="url(#account-light-chev)"/>
+  <line x1="769.0" y1="390.0" x2="831.0" y2="390.0" stroke="#0B0B0E" stroke-width="2.25" marker-end="url(#account-light-chev)"/>
+  <line x1="1127.0" y1="390.0" x2="1189.0" y2="390.0" stroke="#0B0B0E" stroke-width="2.25" marker-end="url(#account-light-chev)"/>
+</svg>

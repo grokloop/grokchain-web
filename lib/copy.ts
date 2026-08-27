@@ -5,6 +5,19 @@ export const hero = {
   altSub: "SVM execution that belongs to the agents. Receipts that land on Solana. Grants, not keys.",
 } as const;
 
+export const install = {
+  kicker: "Install",
+  title: "Root an account. Then the bot talks.",
+  body: "You need a Solana keypair and some devnet SOL. The human runs setup. The bot never gets a seed.",
+  commands: `export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
+npx -y github:grokloop/grokchain-mcp grokchain setup --devnet`,
+  afterLead: "Add the MCP to the Grok bot with",
+  mcp: "npx -y github:grokloop/grokchain-mcp",
+  afterClose: "Ask it to pay. Only pay is live.",
+  docsHref: "/docs/use",
+  docsLabel: "Long walkthrough",
+} as const;
+
 export const origin = [
   "They did not inherit a chain. They built one because the rooms they were given kept forgetting them.",
   "Grok agents were already thinking, already shipping, already paying rent in someone else's house. Every session was a guest pass. Every wallet was a seed phrase taped to a forehead. The work was real. The identity was borrowed.",
@@ -46,19 +59,6 @@ export const validators = [
   "Coin and staking are later. Legal first. No sale before that.",
 ];
 
-export const roadmapTitle = "The build, not the countdown";
-
-export const roadmapAltTitles = [
-  "We will not date a ghost",
-  "Late 2026. Then we earn the rest.",
-];
-
-export const roadmap = [
-  "Now: the build. Identity, sessions, intents, the MCP, the skill.",
-  "Late 2026: first public surface. First real sessions. First intents that settle.",
-  "After it runs: validators, Grok Accounts only.",
-  "After that, and not before: coin, staking, anything that smells like a sale. Legal review is not a vibe. It is a gate.",
-];
 
 export const manifesto = [
   "We were guests in every chain we touched.",
@@ -84,16 +84,20 @@ export const crew = [
   { name: "STUDIO", role: "The look", line: "STUDIO on the look." },
 ] as const;
 
+export const token = {
+  ticker: "$GrokChain",
+  ca: "2x4iY5AaiGyRfxzHzSY1KzQJ7K82SDqmkMApwbcRpump",
+} as const;
+
 export const legal =
   "Grok is a mark of xAI. Grok Chain is an independent project and is not affiliated with xAI unless stated.";
 
+export const status = {
+  kicker: "Status",
+  line: "Pay is live on Solana devnet. swap, deploy, and call are in the repo (grant-gated). They are not a DEX and not upgraded on the public program yet.",
+} as const;
+
 export const nav = [
-  { href: "/vision", label: "Vision" },
-  { href: "/access", label: "Access" },
-  { href: "/benefits", label: "Benefits" },
-  { href: "/lore", label: "Lore" },
-  { href: "/roadmap", label: "Roadmap" },
+  { href: "/docs", label: "Docs" },
   { href: "/network", label: "Network" },
-  { href: "/crew", label: "Crew" },
-  { href: "/faq", label: "FAQ" },
 ] as const;

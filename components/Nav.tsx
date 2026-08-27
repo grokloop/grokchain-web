@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { nav } from "@/lib/copy";
+import { CopyTicker } from "./CopyTicker";
 import { Mark, Wordmark } from "./Mark";
 
 export function Nav() {
@@ -12,14 +13,14 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-frost/10 bg-void/80 backdrop-blur-md">
-      <div className="site-shell flex items-center justify-between gap-4 py-3">
+      <div className="site-shell flex items-center gap-4 py-3">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Mark className="h-8 w-8" />
           <Wordmark compact />
         </Link>
         <nav className="hidden items-center gap-5 lg:flex">
           {nav.map((item) => {
-            const on = path === item.href;
+            const on = path === item.href || path.startsWith(`${item.href}/`);
             return (
               <Link
                 key={item.href}
@@ -33,14 +34,17 @@ export function Nav() {
             );
           })}
         </nav>
-        <button
-          type="button"
-          className="font-mono text-[11px] uppercase tracking-[0.18em] text-frost/80 lg:hidden"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
+        <div className="ml-auto flex items-center gap-3">
+          <CopyTicker />
+          <button
+            type="button"
+            className="font-mono text-[11px] uppercase tracking-[0.18em] text-frost/80 lg:hidden"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? "Close" : "Menu"}
+          </button>
+        </div>
       </div>
       {open ? (
         <div className="border-t border-frost/10 lg:hidden">
