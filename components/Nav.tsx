@@ -20,11 +20,13 @@ export function Nav() {
         </Link>
         <nav className="hidden items-center gap-5 lg:flex">
           {nav.map((item) => {
-            const on = path === item.href || path.startsWith(`${item.href}/`);
+            const external = item.href.startsWith("http");
+            const on = !external && (path === item.href || path.startsWith(`${item.href}/`));
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
                 className={`font-mono text-[11px] uppercase tracking-[0.18em] ${
                   on ? "text-ion" : "text-frost/70 hover:text-frost"
                 }`}
@@ -54,6 +56,7 @@ export function Nav() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
+                {...(item.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="font-mono text-xs uppercase tracking-[0.2em] text-frost/80"
               >
                 {item.label}
