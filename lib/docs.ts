@@ -84,7 +84,7 @@ export const validatorsDocs = {
   ],
 } as const;
 
-export const statusLine = "Pay is live on Solana MAINNET. Not a new L1.";
+export const statusLine = "Pay, pump, call, and deploy are live on Solana MAINNET. Honest limits. Not a new L1.";
 
 export const firstPay = {
   title: "First MAINNET pay",
@@ -104,13 +104,15 @@ export const whatExistsNow = {
   title: "What exists now",
   lede: "Honest, not a countdown.",
   points: [
-    "MAINNET pay is live on Solana. Site + docs live.",
-    "swap, deploy, and call are not on this public INTENTS binary.",
+    "MAINNET INTENTS is upgraded. pay, pump_buy/sell/create, call, and deploy land on 3HCErAF.",
+    "deploy is a grant event (DeployRequested). It does not upload an ELF.",
+    "swap is a grant-gated SOL min_out send. Not an AMM. Not Jupiter.",
+    "pump is official pump.fun buy_v2 / sell_v2 / create_v2. Trader PDA is user. Vault is never user. Migrated (complete) bonding curves cannot buy_v2.",
     "There is no public sequencer. There are no Grok Chain validators. There is no TVL to invent.",
   ],
   mcp: {
     href: "https://github.com/grokloop/grokchain-mcp",
-    text: "cluster=mainnet-beta. Pay only.",
+    text: "cluster=mainnet-beta. pay + pump + call + deploy.",
   },
   use: {
     href: "/docs/use",
@@ -125,7 +127,7 @@ export const easierThanSolana = {
   lede: "Easier mouth. Same settlement.",
   lines: [
     "The bot speaks an intent. The grant decides if it may. The receipt still lands on Solana. You did not leave the ground. You stopped making the agent hold the keys.",
-    "This page is MAINNET-first. Pay is the intent that lands. Swap, deploy, and call are not on this public INTENTS binary. DEVNET still exists on the old ids if you want to rehearse.",
+    "This page is MAINNET-first. pay, pump, call, and deploy land on the upgraded INTENTS binary. swap is SOL min_out, not an AMM. deploy is a grant event, not an ELF upload. pump is the official pump.fun trade. DEVNET still exists on the old ids if you want to rehearse.",
     "The mouth is easier. The settlement is the same. We will not call that a new L1.",
   ],
 } as const;
@@ -133,13 +135,13 @@ export const easierThanSolana = {
 export const howToUse = {
   kicker: "Use",
   title: "MAINNET walkthrough for a Grok bot.",
-  lede: "A human with a wallet. A Grok bot with MCP. Pay is live on Solana MAINNET. The bot never holds a seed or SOL.",
+  lede: "A human with a wallet. A Grok bot with MCP. pay, pump, call, and deploy are live on Solana MAINNET. The bot never holds a seed or SOL.",
   steps: [
     "Get the MCP: https://github.com/grokloop/grokchain-mcp",
     "Human roots with their wallet. Never give the bot a seed.",
     "Set MAINNET env. CLUSTER=mainnet-beta, RPC, PROGRAM_ID, INTENTS, ROOT_KEYPAIR. There is no setup --mainnet yet. Do not use setup --devnet as the MAINNET path.",
     "Add the MCP to the Grok bot. stdio. Env paths. GROKCHAIN_CLUSTER=mainnet-beta.",
-    "Ask the bot to pay a small MAINNET amount. Only pay is live. If setup is missing, the bot says need_human_setup. It does not fake a send.",
+    "Ask the bot to pay a small MAINNET amount, or pump_buy / call / deploy. If setup is missing, the bot says need_human_setup. It does not fake a send.",
   ],
   setupTwoLiner: `export GROKCHAIN_CLUSTER=mainnet-beta
 export GROKCHAIN_RPC_URL=https://api.mainnet-beta.solana.com
@@ -158,7 +160,7 @@ export const devnetWalk = {
   rpcUrl: "https://api.mainnet-beta.solana.com",
   programsHeading: "Live programs — Solana MAINNET",
   programsLede:
-    "These are the MAINNET pay-only deployed ids. Explorer links have no cluster query. Token CA 2x4iY5AaiGyRfxzHzSY1KzQJ7K82SDqmkMApwbcRpump is a mint, not these programs. DEVNET rehearsal ids are listed after. Localnet exists in HUMAN.md. Do not treat local-only program ids as live.",
+    "These are the MAINNET deployed ids (upgraded INTENTS). Explorer links have no cluster query. Token CA 2x4iY5AaiGyRfxzHzSY1KzQJ7K82SDqmkMApwbcRpump is a mint, not these programs. DEVNET rehearsal ids are listed after. Localnet exists in HUMAN.md. Do not treat local-only program ids as live.",
   programs: [
     {
       name: "CORE",
@@ -168,7 +170,7 @@ export const devnetWalk = {
     },
     {
       name: "INTENTS",
-      note: "pay only",
+      note: "pay + pump + call + deploy",
       id: "3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw",
       href: "https://explorer.solana.com/address/3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw",
     },
@@ -234,7 +236,7 @@ grokchain paymaster fund --sol 0.02`,
   }
 }`,
   rules: [
-    "swap, deploy, and call are not on this public INTENTS binary.",
+    "deploy = grant event, not ELF upload. swap = SOL min_out, not AMM. pump = official pump.fun CPI (trader is user). Complete bonding curves cannot buy_v2. 27-account pump_buy needs a v0 tx + address lookup table on public RPC.",
     "sponsor_eligible means this grant may use YOUR paymaster. It is not a promise Grok Chain pays.",
     "Each root funds their own vault, paymaster, and relayer. Do not send SOL to EcSnayFc or E8Pm8RG6.",
     "The bot never holds SOL. Never give the bot a seed.",

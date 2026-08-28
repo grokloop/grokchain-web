@@ -17,7 +17,7 @@ export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
 npx -y github:grokloop/grokchain-mcp`,
   afterLead: "Add the MCP to the Grok bot with",
   mcp: "npx -y github:grokloop/grokchain-mcp",
-  afterClose: "Ask it to pay. Only pay is live on MAINNET.",
+  afterClose: "Ask it to pay, pump_buy, call, or deploy. Honest limits on /docs/use.",
   docsHref: "/docs/use",
   docsLabel: "Long walkthrough",
 } as const;
@@ -98,7 +98,7 @@ export const legal =
 
 export const status = {
   kicker: "Status",
-  line: "Pay is live on Solana MAINNET. swap, deploy, and call are not on this public INTENTS binary. DEVNET still exists on the old ids if you want to rehearse.",
+  line: "Pay, pump, call, and deploy are live on Solana MAINNET. deploy is a grant event, not an ELF upload. swap is SOL min_out, not an AMM. pump is official pump.fun. DEVNET still exists on the old ids if you want to rehearse.",
 } as const;
 
 export const nav = [
