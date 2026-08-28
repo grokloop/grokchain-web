@@ -8,12 +8,16 @@ export const hero = {
 export const install = {
   kicker: "Install",
   title: "Root an account. Then the bot talks.",
-  body: "You need a Solana keypair and some devnet SOL. The human runs setup. The bot never gets a seed.",
-  commands: `export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
-npx -y github:grokloop/grokchain-mcp grokchain setup --devnet`,
+  body: "You need a Solana keypair and some MAINNET SOL. The human roots the account. The bot never gets a seed.",
+  commands: `export GROKCHAIN_CLUSTER=mainnet-beta
+export GROKCHAIN_RPC_URL=https://api.mainnet-beta.solana.com
+export GROKCHAIN_PROGRAM_ID=44fxwzuEyNxZtgDr87mTtMYYJ1LJm6cB5aZNLyBsPjNd
+export GROKCHAIN_INTENTS_PROGRAM_ID=3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw
+export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
+npx -y github:grokloop/grokchain-mcp`,
   afterLead: "Add the MCP to the Grok bot with",
   mcp: "npx -y github:grokloop/grokchain-mcp",
-  afterClose: "Ask it to pay. Only pay is live.",
+  afterClose: "Ask it to pay. Only pay is live on MAINNET.",
   docsHref: "/docs/use",
   docsLabel: "Long walkthrough",
 } as const;
@@ -94,7 +98,7 @@ export const legal =
 
 export const status = {
   kicker: "Status",
-  line: "Pay is live on Solana devnet. swap, deploy, and call are in the repo (grant-gated). They are not a DEX and not upgraded on the public program yet.",
+  line: "Pay is live on Solana MAINNET. swap, deploy, and call are not on this public INTENTS binary. DEVNET still exists on the old ids if you want to rehearse.",
 } as const;
 
 export const nav = [

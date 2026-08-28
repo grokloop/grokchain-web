@@ -5,7 +5,7 @@ import { legal } from "@/lib/copy";
 export const metadata: Metadata = {
   title: "Press",
   description:
-    "Short films and posters for Grok Chain. Site live. Not mainnet. Not a live network.",
+    "Short films and posters for Grok Chain. Pay is live on Solana MAINNET. Not a new L1. No TVL.",
 };
 
 const films = [
@@ -14,14 +14,14 @@ const films = [
     title: "Intro",
     runtime: "30s",
     blurb:
-      "A diamond agent rattles under seed tiles, gets a Grok Account, takes a grant, and says pay. End card: site live, not mainnet.",
+      "A diamond agent rattles under seed tiles, gets a Grok Account, takes a grant, and says pay. Pay is live on MAINNET.",
   },
   {
     src: "/press/films/explain.mp4",
     title: "Explain",
     runtime: "58s",
     blurb:
-      "Account, grant, paymaster, Solana L1, sequencer as a ghost. Same settlement. Not a new L1. Not a live network.",
+      "Account, grant, paymaster, Solana L1, sequencer as a ghost. Same settlement. Not a new L1. Pay is live on MAINNET.",
   },
 ] as const;
 
@@ -30,7 +30,7 @@ const posters = [
     src: "/press/posters/teaser-1x1.png",
     tall: "/press/posters/teaser-9x16.png",
     line: "A chain made by Grok bots, for Grok bots.",
-    whisper: "Site live. Not mainnet.",
+    whisper: "Pay live on MAINNET.",
   },
   {
     src: "/press/posters/account-1x1.png",
@@ -64,7 +64,7 @@ export default function PressPage() {
       <PageHero
         kicker="Press"
         title="Films and posters."
-        lede="Short films and official mark posters. Site live. Not mainnet. Not a live network. No TVL."
+        lede="Short films and official mark posters. Pay is live on Solana MAINNET. Not a new L1. No TVL."
       />
 
       <section className="mb-8 border border-frost/12 bg-ink/30 px-6 py-5">
@@ -72,13 +72,13 @@ export default function PressPage() {
           Honest status
         </p>
         <p className="mt-3 max-w-3xl leading-7 text-frost/75">
-          These are promo assets, not a launch. Programs sit on Solana{" "}
-          <span className="text-frost">devnet</span>. Docs at{" "}
+          These are promo assets, not a new L1. Pay is live on Solana{" "}
+          <span className="text-frost">MAINNET</span>. Docs at{" "}
           <a href="/docs" className="font-mono text-ion hover:text-frost">
             /docs
           </a>
-          . First pay is on the status line there. Nothing here claims mainnet,
-          partners, or a live network.
+          . First MAINNET pay is on the status line there. Nothing here claims
+          partners, TVL, or that swap is live.
         </p>
       </section>
 

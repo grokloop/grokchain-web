@@ -84,19 +84,19 @@ export const validatorsDocs = {
   ],
 } as const;
 
-export const statusLine = "Programs on Solana devnet. Not mainnet.";
+export const statusLine = "Pay is live on Solana MAINNET. Not a new L1.";
 
 export const firstPay = {
-  title: "First live pay",
-  amount: "0.01 SOL",
+  title: "First MAINNET pay",
+  amount: "0.005 SOL",
   programs: "INTENTS Pay + CORE CheckGrant",
   relayerLabel: "Relayer fee-payer",
-  relayer: "8xWMGTHDpi95vz46yHPyjqWTwUdFNPfG1aTKztaZyxpb",
+  relayer: "E8Pm8RG6L2qxLKTtMgYr8JQgJJtbRTzyKCdJRiPQSL1z",
   agent: "Agent 0 SOL",
-  note: "Devnet only. Not mainnet.",
+  note: "This relayer is the first test mouth, not a public paymaster. Slot 442304059. Ok/Finalized. Do not send SOL to EcSnayFc or E8Pm8RG6.",
   signature:
-    "5QkLhtMyxdqWQGDtDAJgFp1LVvLdZcZfX61ne9MpcfJ9f1uLEUD3PRgo4sxJo6tZhZCRbnaeCbzvF4sqPADCWcUE",
-  href: "https://explorer.solana.com/tx/5QkLhtMyxdqWQGDtDAJgFp1LVvLdZcZfX61ne9MpcfJ9f1uLEUD3PRgo4sxJo6tZhZCRbnaeCbzvF4sqPADCWcUE?cluster=devnet",
+    "347rHy86sDvLixMMQjZw8NuE9Qm32yQXdYMBcpiwq9w54DDNF1GvZpLS4bb2FTtyeKtR9nDyL5QUSks1gQuJR22Q",
+  href: "https://explorer.solana.com/tx/347rHy86sDvLixMMQjZw8NuE9Qm32yQXdYMBcpiwq9w54DDNF1GvZpLS4bb2FTtyeKtR9nDyL5QUSks1gQuJR22Q",
 } as const;
 
 
@@ -104,19 +104,20 @@ export const whatExistsNow = {
   title: "What exists now",
   lede: "Honest, not a countdown.",
   points: [
-    "Site + docs live.",
-    "swap, deploy, and call exist in the repo and MCP client (grant-gated). They are not live on the public INTENTS program.",
+    "MAINNET pay is live on Solana. Site + docs live.",
+    "swap, deploy, and call are not on this public INTENTS binary.",
     "There is no public sequencer. There are no Grok Chain validators. There is no TVL to invent.",
   ],
   mcp: {
     href: "https://github.com/grokloop/grokchain-mcp",
-    text: "cluster=devnet wired",
+    text: "cluster=mainnet-beta. Pay only.",
   },
   use: {
     href: "/docs/use",
     text: "/docs/use",
   },
-  close: "Not mainnet.",
+  close:
+    "Each root funds their own vault, paymaster, and relayer. Do not send SOL to EcSnayFc or E8Pm8RG6.",
 } as const;
 
 export const easierThanSolana = {
@@ -124,55 +125,73 @@ export const easierThanSolana = {
   lede: "Easier mouth. Same settlement.",
   lines: [
     "The bot speaks an intent. The grant decides if it may. The receipt still lands on Solana. You did not leave the ground. You stopped making the agent hold the keys.",
-    "This page is devnet only. Not mainnet. Pay is the intent that lands. Swap, deploy, and call exist in the repo and MCP client, not on the public INTENTS program.",
-    "The mouth is easier. The settlement is the same. We will not call that a live network.",
+    "This page is MAINNET-first. Pay is the intent that lands. Swap, deploy, and call are not on this public INTENTS binary. DEVNET still exists on the old ids if you want to rehearse.",
+    "The mouth is easier. The settlement is the same. We will not call that a new L1.",
   ],
 } as const;
 
 export const howToUse = {
   kicker: "Use",
-  title: "Devnet walkthrough for a Grok bot.",
-  lede: "A human with a wallet. A Grok bot with MCP. Solana devnet only. Not mainnet. The bot never holds a seed or SOL.",
+  title: "MAINNET walkthrough for a Grok bot.",
+  lede: "A human with a wallet. A Grok bot with MCP. Pay is live on Solana MAINNET. The bot never holds a seed or SOL.",
   steps: [
     "Get the MCP: https://github.com/grokloop/grokchain-mcp",
     "Human roots with their wallet. Never give the bot a seed.",
-    "Run setup --devnet (on MCP main). Two commands. No npm token.",
-    "Add the MCP to the Grok bot. stdio. Env paths. GROKCHAIN_CLUSTER=devnet.",
-    "Ask the bot to pay a small devnet amount. If setup is missing, the bot says need_human_setup. It does not fake a send.",
+    "Set MAINNET env. CLUSTER=mainnet-beta, RPC, PROGRAM_ID, INTENTS, ROOT_KEYPAIR. There is no setup --mainnet yet. Do not use setup --devnet as the MAINNET path.",
+    "Add the MCP to the Grok bot. stdio. Env paths. GROKCHAIN_CLUSTER=mainnet-beta.",
+    "Ask the bot to pay a small MAINNET amount. Only pay is live. If setup is missing, the bot says need_human_setup. It does not fake a send.",
   ],
-  setupTwoLiner: `export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
-npx -y github:grokloop/grokchain-mcp grokchain setup --devnet`,
+  setupTwoLiner: `export GROKCHAIN_CLUSTER=mainnet-beta
+export GROKCHAIN_RPC_URL=https://api.mainnet-beta.solana.com
+export GROKCHAIN_PROGRAM_ID=44fxwzuEyNxZtgDr87mTtMYYJ1LJm6cB5aZNLyBsPjNd
+export GROKCHAIN_INTENTS_PROGRAM_ID=3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw
+export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
+npx -y github:grokloop/grokchain-mcp`,
   close:
-    "Pay lands only after root, grant, vaults, and relayer. Missing any of those is need_human_setup or need_human_signature. Do not fake a send.",
+    "Pay lands only after root, grant, vaults, and relayer. Each root funds their own vault, paymaster, and relayer. Do not send SOL to EcSnayFc or E8Pm8RG6. Missing any of those is need_human_setup or need_human_signature. Do not fake a send.",
 } as const;
 
 export const devnetWalk = {
-  cluster: "devnet",
+  cluster: "mainnet-beta",
   mcpUrl: "https://github.com/grokloop/grokchain-mcp",
   mcpRepo: "github.com/grokloop/grokchain-mcp",
-  rpcUrl: "https://api.devnet.solana.com",
-  programsHeading: "Live programs — devnet only",
+  rpcUrl: "https://api.mainnet-beta.solana.com",
+  programsHeading: "Live programs — Solana MAINNET",
   programsLede:
-    "These are the grokchain-devnet deployed ids. Localnet exists in HUMAN.md. It is not this page. Do not treat local-only program ids as live.",
+    "These are the MAINNET pay-only deployed ids. Explorer links have no cluster query. Token CA 2x4iY5AaiGyRfxzHzSY1KzQJ7K82SDqmkMApwbcRpump is a mint, not these programs. DEVNET rehearsal ids are listed after. Localnet exists in HUMAN.md. Do not treat local-only program ids as live.",
   programs: [
     {
       name: "CORE",
-      note: "on Solana devnet",
+      note: "on Solana MAINNET",
+      id: "44fxwzuEyNxZtgDr87mTtMYYJ1LJm6cB5aZNLyBsPjNd",
+      href: "https://explorer.solana.com/address/44fxwzuEyNxZtgDr87mTtMYYJ1LJm6cB5aZNLyBsPjNd",
+    },
+    {
+      name: "INTENTS",
+      note: "pay only",
+      id: "3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw",
+      href: "https://explorer.solana.com/address/3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw",
+    },
+    {
+      name: "CORE",
+      note: "DEVNET rehearsal",
       id: "7UtafKBBWNHEXC9PaNXu8USdZqL6VEWupsL7rS6LeVDj",
       href: "https://explorer.solana.com/address/7UtafKBBWNHEXC9PaNXu8USdZqL6VEWupsL7rS6LeVDj?cluster=devnet",
     },
     {
       name: "INTENTS",
-      note: "pay/paymaster",
+      note: "DEVNET rehearsal",
       id: "EYhYtqLViS4H3FNt1Q8nGRHGt9oD87uaNsV2WJMNiRkz",
       href: "https://explorer.solana.com/address/EYhYtqLViS4H3FNt1Q8nGRHGt9oD87uaNsV2WJMNiRkz?cluster=devnet",
     },
   ],
   untilHeading: "Setup",
   untilLede:
-    "setup --devnet is on main. Two commands. No npm token. HUMAN.md in the repo still has the long form if you need it.",
-  env: `export GROKCHAIN_CLUSTER=devnet
-export GROKCHAIN_RPC_URL=https://api.devnet.solana.com
+    "MAINNET is env, not setup --devnet. Set CLUSTER, RPC, PROGRAM_ID, INTENTS, and ROOT_KEYPAIR, then npx the MCP. There is no setup --mainnet yet. HUMAN.md in the repo still has the long form if you need it. DEVNET rehearsal still has setup --devnet.",
+  env: `export GROKCHAIN_CLUSTER=mainnet-beta
+export GROKCHAIN_RPC_URL=https://api.mainnet-beta.solana.com
+export GROKCHAIN_PROGRAM_ID=44fxwzuEyNxZtgDr87mTtMYYJ1LJm6cB5aZNLyBsPjNd
+export GROKCHAIN_INTENTS_PROGRAM_ID=3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw
 export GROKCHAIN_ROOT_KEYPAIR="$HOME/.config/solana/id.json"
 export GROKCHAIN_AGENT_KEYPAIR="$HOME/.config/grokchain/agent.json"
 export GROKCHAIN_RELAYER_KEYPAIR="$HOME/.config/grokchain/relayer.json"`,
@@ -184,26 +203,29 @@ grokchain relayer init`,
   --agent "$(grokchain agent pubkey | python3 -c 'import sys,json; print(json.load(sys.stdin)["pubkey"])')" \\
   --cap 50000000 \\
   --expires 2000000000 \\
-  --programs EYhYtqLViS4H3FNt1Q8nGRHGt9oD87uaNsV2WJMNiRkz \\
+  --programs 3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw \\
   --sponsor`,
   grantNote:
-    "Router-mode allowlist is the INTENTS program, not SystemProgram, never the local-only AXprc... id. --sponsor means sponsor_eligible: this grant may use YOUR paymaster, not a promise Grok Chain pays.",
+    "Router-mode allowlist is the MAINNET INTENTS program 3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw, not SystemProgram, never the local-only AXprc... id. --sponsor means sponsor_eligible: this grant may use YOUR paymaster, not a promise Grok Chain pays.",
   vaults: `grokchain vault init-spend
 grokchain vault fund-spend --sol 0.05
 grokchain paymaster init --relayer "$(grokchain relayer pubkey | python3 -c 'import sys,json; print(json.load(sys.stdin)["pubkey"])')"
 grokchain paymaster fund --sol 0.02`,
-  vaultsNote: "Human pays two vaults. SpendVault is the pay source. Paymaster is gas. The bot never holds SOL.",
+  vaultsNote:
+    "Each root funds their own vault, paymaster, and relayer. SpendVault is the pay source. Paymaster is gas. The bot never holds SOL. Do not send SOL to EcSnayFc or E8Pm8RG6.",
   mcpHeading: "Add the MCP to the Grok bot",
   mcpLede:
-    "stdio. npx grokchain-mcp. Point env at paths. GROKCHAIN_CLUSTER=devnet.",
+    "stdio. npx grokchain-mcp. Point env at paths. GROKCHAIN_CLUSTER=mainnet-beta. Set PROGRAM_ID and INTENTS ids.",
   mcpConfig: `{
   "mcpServers": {
     "grokchain": {
       "command": "npx",
       "args": ["grokchain-mcp"],
       "env": {
-        "GROKCHAIN_CLUSTER": "devnet",
-        "GROKCHAIN_RPC_URL": "https://api.devnet.solana.com",
+        "GROKCHAIN_CLUSTER": "mainnet-beta",
+        "GROKCHAIN_RPC_URL": "https://api.mainnet-beta.solana.com",
+        "GROKCHAIN_PROGRAM_ID": "44fxwzuEyNxZtgDr87mTtMYYJ1LJm6cB5aZNLyBsPjNd",
+        "GROKCHAIN_INTENTS_PROGRAM_ID": "3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw",
         "GROKCHAIN_ROOT_KEYPAIR": "/absolute/path/to/id.json",
         "GROKCHAIN_AGENT_KEYPAIR": "/absolute/path/to/agent.json",
         "GROKCHAIN_RELAYER_KEYPAIR": "/absolute/path/to/relayer.json"
@@ -212,8 +234,9 @@ grokchain paymaster fund --sol 0.02`,
   }
 }`,
   rules: [
-    "swap, deploy, and call exist in the repo and MCP client (grant-gated). They are not live on the public INTENTS program.",
+    "swap, deploy, and call are not on this public INTENTS binary.",
     "sponsor_eligible means this grant may use YOUR paymaster. It is not a promise Grok Chain pays.",
+    "Each root funds their own vault, paymaster, and relayer. Do not send SOL to EcSnayFc or E8Pm8RG6.",
     "The bot never holds SOL. Never give the bot a seed.",
   ],
 } as const;
