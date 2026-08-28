@@ -1,4 +1,4 @@
-import { devnetWalk, firstPay, statusLine } from "@/lib/docs";
+import { devnetWalk, firstAmmBuy, firstAmmSell, firstPay, statusLine } from "@/lib/docs";
 
 export function StatusLine() {
   return (
@@ -67,5 +67,47 @@ export function DocsPrograms() {
         </li>
       ))}
     </ul>
+  );
+}
+
+function ProvenSig(props: {
+  title: string;
+  amount: string;
+  programs: string;
+  agent: string;
+  note: string;
+  signature: string;
+  href: string;
+}) {
+  return (
+    <section className="border border-frost/12 bg-ink/30 px-6 py-6">
+      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ion">
+        {props.title}
+      </p>
+      <p className="mt-3 leading-7 text-frost/80">
+        {props.amount}. {props.programs}. {props.agent}. {props.note}
+      </p>
+      <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-ion">
+        Signature
+      </p>
+      <code className="mt-3 block select-all break-all font-mono text-[12px] text-frost">
+        {props.signature}
+      </code>
+      <a
+        href={props.href}
+        className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-frost/70 hover:text-ion"
+      >
+        Explorer →
+      </a>
+    </section>
+  );
+}
+
+export function ProvenAmm() {
+  return (
+    <div className="grid gap-4">
+      <ProvenSig {...firstAmmBuy} />
+      <ProvenSig {...firstAmmSell} />
+    </div>
   );
 }

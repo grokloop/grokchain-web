@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { DocsPager, DocsProse, DocsSteps } from "@/components/DocsArticle";
-import { DocsPrograms, FirstPay, StatusLine } from "@/components/LiveStatus";
+import { DocsPrograms, FirstPay, ProvenAmm, StatusLine } from "@/components/LiveStatus";
 import { devnetWalk, easierThanSolana, howToUse } from "@/lib/docs";
 
 export const metadata: Metadata = { title: "Use" };
@@ -25,6 +25,9 @@ export default function DocsUsePage() {
 
       <div className="mb-10">
         <FirstPay />
+        <div className="mt-6">
+          <ProvenAmm />
+        </div>
       </div>
 
       <p className="max-w-3xl leading-8 text-frost/70">

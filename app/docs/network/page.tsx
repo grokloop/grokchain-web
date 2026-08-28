@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { DocsFigure, DocsPager, DocsProse } from "@/components/DocsArticle";
-import { DocsPrograms, FirstPay, StatusLine } from "@/components/LiveStatus";
+import { DocsPrograms, FirstPay, ProvenAmm, StatusLine } from "@/components/LiveStatus";
 import { validatorsDocs, whatItIs } from "@/lib/docs";
 
 export const metadata: Metadata = { title: "Network" };
@@ -19,6 +19,9 @@ export default function DocsNetworkPage() {
         <StatusLine />
         <div className="mt-6">
           <FirstPay />
+        </div>
+        <div className="mt-6">
+          <ProvenAmm />
         </div>
         <DocsPrograms />
       </section>

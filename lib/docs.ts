@@ -84,7 +84,7 @@ export const validatorsDocs = {
   ],
 } as const;
 
-export const statusLine = "Pay, pump, call, and deploy are live on Solana MAINNET. Honest limits. Not a new L1.";
+export const statusLine = "Pay, pump, pump_amm_buy, pump_amm_sell, call, and deploy are live on Solana MAINNET. Honest limits. Not a new L1.";
 
 export const firstPay = {
   title: "First MAINNET pay",
@@ -99,20 +99,43 @@ export const firstPay = {
   href: "https://explorer.solana.com/tx/347rHy86sDvLixMMQjZw8NuE9Qm32yQXdYMBcpiwq9w54DDNF1GvZpLS4bb2FTtyeKtR9nDyL5QUSks1gQuJR22Q",
 } as const;
 
+export const firstAmmBuy = {
+  title: "MAINNET pump_amm_buy",
+  amount: "0.1 SOL → 149274.512729 $GrokChain",
+  programs: "INTENTS PumpAmmBuy + PumpSwap BuyExactQuoteIn + CORE CheckGrant",
+  agent: "Agent 0 SOL",
+  note: "Grant-gated PumpSwap. Trader is remaining[1] only. Vault never user. Buy remaining 26. Slot 442367250. Finalized. Not Jupiter. Not a new L1.",
+  signature:
+    "59PuJuszMqYMGmXwuuCD4aufwKK8ttZGjujvwGpq7q8t4bvDtfFeCTjfigxcqB4NwNpmANV49MhJfGruUXx4RxcC",
+  href: "https://explorer.solana.com/tx/59PuJuszMqYMGmXwuuCD4aufwKK8ttZGjujvwGpq7q8t4bvDtfFeCTjfigxcqB4NwNpmANV49MhJfGruUXx4RxcC",
+} as const;
+
+export const firstAmmSell = {
+  title: "MAINNET pump_amm_sell",
+  amount: "Trader 5QkJFdLm native SOL 0.00089088 → 0.019022138",
+  programs: "INTENTS PumpAmmSell + PumpSwap Sell + CORE CheckGrant",
+  agent: "Agent 0 SOL",
+  note: "Grant-gated PumpSwap. Sell remaining 24 (no volume accs). Do not pass buy's 26. Unwrap stayed on trader, not vault. WSOL ATA closed. Finalized. Not Jupiter.",
+  signature:
+    "42mkDG4zb57MNBoMD2wKdGuRwz3oBdrgjmoWsb8Me4VRueF1PhJLu8iaoucuHc9CPLQ3e9AtLcj135SEY9KTDmRf",
+  href: "https://explorer.solana.com/tx/42mkDG4zb57MNBoMD2wKdGuRwz3oBdrgjmoWsb8Me4VRueF1PhJLu8iaoucuHc9CPLQ3e9AtLcj135SEY9KTDmRf",
+} as const;
+
 
 export const whatExistsNow = {
   title: "What exists now",
   lede: "Honest, not a countdown.",
   points: [
-    "MAINNET INTENTS is upgraded. pay, pump_buy/sell/create, call, and deploy land on 3HCErAF.",
+    "MAINNET INTENTS is upgraded. pay, pump_buy/sell/create, pump_amm_buy/sell, call, and deploy land on 3HCErAF.",
     "deploy is a grant event (DeployRequested). It does not upload an ELF.",
     "swap is a grant-gated SOL min_out send. Not an AMM. Not Jupiter.",
     "pump is official pump.fun buy_v2 / sell_v2 / create_v2. Trader PDA is user. Vault is never user. Migrated (complete) bonding curves cannot buy_v2.",
+    "pump_amm_buy / pump_amm_sell are grant-gated PumpSwap. Trader is remaining[1] only. Vault is never user. Buy remaining 26. Sell remaining 24 (no volume accs). Do not pass buy's 26 to sell. Agent stays 0 SOL. Quote unwrap stays on the trader, not the vault.",
     "There is no public sequencer. There are no Grok Chain validators. There is no TVL to invent.",
   ],
   mcp: {
     href: "https://github.com/grokloop/grokchain-mcp",
-    text: "cluster=mainnet-beta. pay + pump + call + deploy.",
+    text: "cluster=mainnet-beta. pay + pump + pump_amm + call + deploy.",
   },
   use: {
     href: "/docs/use",
@@ -127,7 +150,7 @@ export const easierThanSolana = {
   lede: "Easier mouth. Same settlement.",
   lines: [
     "The bot speaks an intent. The grant decides if it may. The receipt still lands on Solana. You did not leave the ground. You stopped making the agent hold the keys.",
-    "This page is MAINNET-first. pay, pump, call, and deploy land on the upgraded INTENTS binary. swap is SOL min_out, not an AMM. deploy is a grant event, not an ELF upload. pump is the official pump.fun trade. DEVNET still exists on the old ids if you want to rehearse.",
+    "This page is MAINNET-first. pay, pump, pump_amm_buy/sell, call, and deploy land on the upgraded INTENTS binary. swap is SOL min_out, not an AMM. deploy is a grant event, not an ELF upload. pump is the official pump.fun curve. pump_amm_* is grant-gated PumpSwap. Curve pump_buy cannot hit a graduated mint. DEVNET still exists on the old ids if you want to rehearse.",
     "The mouth is easier. The settlement is the same. We will not call that a new L1.",
   ],
 } as const;
@@ -135,13 +158,13 @@ export const easierThanSolana = {
 export const howToUse = {
   kicker: "Use",
   title: "MAINNET walkthrough for a Grok bot.",
-  lede: "A human with a wallet. A Grok bot with MCP. pay, pump, call, and deploy are live on Solana MAINNET. The bot never holds a seed or SOL.",
+  lede: "A human with a wallet. A Grok bot with MCP. pay, pump, pump_amm_buy, pump_amm_sell, call, and deploy are live on Solana MAINNET. The bot never holds a seed or SOL.",
   steps: [
     "Get the MCP: https://github.com/grokloop/grokchain-mcp",
     "Human roots with their wallet. Never give the bot a seed.",
     "Set MAINNET env. CLUSTER=mainnet-beta, RPC, PROGRAM_ID, INTENTS, ROOT_KEYPAIR. There is no setup --mainnet yet. Do not use setup --devnet as the MAINNET path.",
     "Add the MCP to the Grok bot. stdio. Env paths. GROKCHAIN_CLUSTER=mainnet-beta.",
-    "Ask the bot to pay a small MAINNET amount, or pump_buy / call / deploy. If setup is missing, the bot says need_human_setup. It does not fake a send.",
+    "Ask the bot to pay a small MAINNET amount, or pump_amm_buy / pump_amm_sell / pump_buy / call / deploy. If setup is missing, the bot says need_human_setup. It does not fake a send.",
   ],
   setupTwoLiner: `export GROKCHAIN_CLUSTER=mainnet-beta
 export GROKCHAIN_RPC_URL=https://api.mainnet-beta.solana.com
@@ -170,7 +193,7 @@ export const devnetWalk = {
     },
     {
       name: "INTENTS",
-      note: "pay + pump + call + deploy",
+      note: "pay + pump + pump_amm + call + deploy",
       id: "3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw",
       href: "https://explorer.solana.com/address/3HCErAFs93FMk2J25Qq1xRRMp6B4FyGvif8ZV8hYxQKw",
     },
@@ -236,7 +259,7 @@ grokchain paymaster fund --sol 0.02`,
   }
 }`,
   rules: [
-    "deploy = grant event, not ELF upload. swap = SOL min_out, not AMM. pump = official pump.fun CPI (trader is user). Complete bonding curves cannot buy_v2. 27-account pump_buy needs a v0 tx + address lookup table on public RPC.",
+    "deploy = grant event, not ELF upload. swap = SOL min_out, not AMM. pump = official pump.fun curve (trader is user). pump_amm_buy/sell = grant-gated PumpSwap. Trader is remaining[1] only. Vault never user. Buy remaining 26. Sell remaining 24. Do not pass buy's 26 to sell. Agent stays 0 SOL. Complete bonding curves cannot buy_v2.",
     "sponsor_eligible means this grant may use YOUR paymaster. It is not a promise Grok Chain pays.",
     "Each root funds their own vault, paymaster, and relayer. Do not send SOL to EcSnayFc or E8Pm8RG6.",
     "The bot never holds SOL. Never give the bot a seed.",
