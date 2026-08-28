@@ -1,4 +1,4 @@
-import { devnetWalk, firstAmmBuy, firstAmmSell, firstPay, statusLine } from "@/lib/docs";
+import { devnetWalk, firstAmmBuy, firstAmmSell, firstCurveBuy, firstCurveSell, firstPay, skipDebit, statusLine } from "@/lib/docs";
 
 export function StatusLine() {
   return (
@@ -111,3 +111,17 @@ export function ProvenAmm() {
     </div>
   );
 }
+
+export function ProvenCurve() {
+  return (
+    <div className="grid gap-4">
+      <ProvenSig {...firstCurveBuy} />
+      <ProvenSig {...firstCurveSell} />
+    </div>
+  );
+}
+
+export function SkipDebit() {
+  return <ProvenSig {...skipDebit} />;
+}
+

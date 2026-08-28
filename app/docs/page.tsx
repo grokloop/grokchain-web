@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { DocsFigure, DocsLinks, DocsPager, DocsProse } from "@/components/DocsArticle";
-import { DocsPrograms, FirstPay, ProvenAmm, StatusLine } from "@/components/LiveStatus";
+import { DocsPrograms, FirstPay, ProvenAmm, ProvenCurve, SkipDebit, StatusLine } from "@/components/LiveStatus";
 import { docsLede, liftLines, whatExistsNow, whatItIs } from "@/lib/docs";
 
 export const metadata: Metadata = { title: "Docs" };
@@ -27,6 +27,12 @@ export default function DocsPage() {
         </div>
         <div className="mt-6">
           <ProvenAmm />
+        </div>
+        <div className="mt-6">
+          <ProvenCurve />
+        </div>
+        <div className="mt-6">
+          <SkipDebit />
         </div>
         <DocsPrograms />
         <ul className="mt-6 grid gap-4">
