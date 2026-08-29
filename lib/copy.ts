@@ -98,7 +98,7 @@ export const legal =
 
 export const status = {
   kicker: "Status",
-  line: "Pay, pay_token, token_buy, token_sell, swap, call, and deploy are live on Solana MAINNET. pump_buy / pump_sell / pump_create / pump_amm_buy / pump_amm_sell were cut from the payments ELF for size. Jupiter token_buy/token_sell still reach graduated pump coins. deploy is a grant event, not an ELF upload. swap is still SOL min_out, not an AMM. Skip-debit: fund_pump_trader first, no in-ix vault debit. withdraw_pump_trader is root-only (human CLI), not an agent intent. CORE grant-PDA grief fix is live. Do not claim a live 0.01 USDC shop payment. Agent stays 0 SOL. DEVNET still exists on the old ids if you want to rehearse.",
+  line: "Pay, pay_token, token_buy, token_sell, swap, call, and deploy are live on Solana MAINNET. pump_buy / pump_sell / pump_create / pump_amm_buy / pump_amm_sell were cut from the payments ELF for size. Jupiter token_buy/token_sell still reach graduated pump coins. deploy is a grant event, not an ELF upload. swap is still SOL min_out, not an AMM. Skip-debit: fund_pump_trader first, no in-ix vault debit. withdraw_pump_trader is root-only (human CLI), not an agent intent. CORE grant-PDA grief fix is live. A live 0.01 USDC pay_token landed (sig 4nhDmpmy… slot 442631317) to EcSnayFc ATA BhJew4E7…. Merchant registry 3M5Thn45 live. token_buy 0.005 SOL → 0.523172 USDC (sig CL47DiLx…). This is a Solana USDC transfer from a grant-gated bot. Do not say merchants accept Grok Chain. Do not invent TVL or partners. Agent stays 0 SOL. DEVNET still exists on the old ids if you want to rehearse.",
 } as const;
 
 export const nav = [

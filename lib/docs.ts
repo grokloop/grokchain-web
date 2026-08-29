@@ -90,7 +90,7 @@ export const validatorsDocs = {
   ],
 } as const;
 
-export const statusLine = "Pay, pay_token, token_buy, token_sell, swap, call, and deploy are live on Solana MAINNET. pump_buy / pump_amm_* were cut for size. Jupiter still reaches graduated pump coins. withdraw_pump_trader is root-only. CORE grant-PDA grief fix is live. Honest limits. Not a new L1.";
+export const statusLine = "Pay, pay_token, token_buy, token_sell, swap, call, and deploy are live on Solana MAINNET. A live 0.01 USDC pay_token landed (slot 442631317). Merchant registry 3M5Thn45 live. pump_buy / pump_amm_* were cut for size. Jupiter still reaches graduated pump coins. withdraw_pump_trader is root-only. CORE grant-PDA grief fix is live. Agent 0 SOL. Honest limits. Not a new L1.";
 
 export const firstPay = {
   title: "First MAINNET pay",
@@ -103,6 +103,28 @@ export const firstPay = {
   signature:
     "347rHy86sDvLixMMQjZw8NuE9Qm32yQXdYMBcpiwq9w54DDNF1GvZpLS4bb2FTtyeKtR9nDyL5QUSks1gQuJR22Q",
   href: "https://explorer.solana.com/tx/347rHy86sDvLixMMQjZw8NuE9Qm32yQXdYMBcpiwq9w54DDNF1GvZpLS4bb2FTtyeKtR9nDyL5QUSks1gQuJR22Q",
+} as const;
+
+export const firstPayToken = {
+  title: "First MAINNET pay_token",
+  amount: "0.01 USDC",
+  programs: "INTENTS PayToken + CORE CheckGrant",
+  agent: "Agent 0 SOL",
+  note: "Solana USDC transfer from a grant-gated bot. To EcSnayFc ATA BhJew4E7vXVRhvBqKnCUARWfw5wFEC8YJ3XjL6GTPRGH. Merchant registry 3M5Thn45 live. Slot 442631317. Do not say merchants accept Grok Chain. Do not invent TVL or partners. Pump trade ixs still cut.",
+  signature:
+    "4nhDmpmyzMu9UkRcMphHb41fkgu7hXa3CfwvZ4SKDBcTMDLbHytJuAm46Hz6suFLCRu5Rw1fTipyjJUSnv1WxBBx",
+  href: "https://explorer.solana.com/tx/4nhDmpmyzMu9UkRcMphHb41fkgu7hXa3CfwvZ4SKDBcTMDLbHytJuAm46Hz6suFLCRu5Rw1fTipyjJUSnv1WxBBx",
+} as const;
+
+export const firstTokenBuy = {
+  title: "MAINNET token_buy (USDC)",
+  amount: "0.005 SOL → 0.523172 USDC",
+  programs: "INTENTS TokenBuy + Jupiter v6 + CORE CheckGrant",
+  agent: "Agent 0 SOL",
+  note: "Jupiter v6. Funded the USDC the pay_token spent. Pump trade ixs still cut. Agent 0 SOL.",
+  signature:
+    "CL47DiLxsq1bqysJoXGt7d2M14qKvKBwQoKyBmHNW69561vscpJW8Pu4i595MCpEV33Vq3qVp3zrMEyPHZHa8kk",
+  href: "https://explorer.solana.com/tx/CL47DiLxsq1bqysJoXGt7d2M14qKvKBwQoKyBmHNW69561vscpJW8Pu4i595MCpEV33Vq3qVp3zrMEyPHZHa8kk",
 } as const;
 
 export const firstAmmBuy = {
@@ -186,7 +208,7 @@ export const whatExistsNow = {
   title: "What exists now",
   lede: "Honest, not a countdown.",
   points: [
-    "MAINNET INTENTS is the payments ELF (upgrade slot 442622147). pay, pay_token, merchant registry, subscriptions, token_buy/token_sell, swap, deploy, call, and init/fund/withdraw_pump_trader land on 3HCErAF. pump_buy / pump_sell / pump_create / pump_amm_buy / pump_amm_sell were cut for size. Jupiter token_buy/token_sell still reach graduated pump coins. Do not claim a live 0.01 USDC shop payment (no USDC in the vault). Bots follow /docs/pay.",
+    "MAINNET INTENTS is the payments ELF (upgrade slot 442622147). pay, pay_token, merchant registry, subscriptions, token_buy/token_sell, swap, deploy, call, and init/fund/withdraw_pump_trader land on 3HCErAF. pump_buy / pump_sell / pump_create / pump_amm_buy / pump_amm_sell were cut for size. Jupiter token_buy/token_sell still reach graduated pump coins. A live 0.01 USDC pay_token landed (sig 4nhDmpmy… slot 442631317) to EcSnayFc ATA BhJew4E7…. Merchant registry 3M5Thn45 live. token_buy 0.005 SOL → 0.523172 USDC (sig CL47DiLx…). This is a Solana USDC transfer from a grant-gated bot. Do not say merchants accept Grok Chain. Do not invent TVL or partners. Bots follow /docs/pay.",
     "deploy is a grant event (DeployRequested). It does not upload an ELF.",
     "swap is still a grant-gated SOL min_out send. Not an AMM. Not Jupiter. token_buy / token_sell are the Jupiter v6 path (quote mint may be WSOL, official USDC, or another mint).",
     "pump_buy / pump_sell / pump_create were cut from the live binary. Historical curve buy/sell on 12BbWcSnYdjTiwVTVLA5YaUs99Pc5iQRw2dFPkDpump stay as history, not as current mouth.",
@@ -324,7 +346,7 @@ grokchain paymaster fund --sol 0.02`,
   }
 }`,
   rules: [
-    "deploy = grant event, not ELF upload. swap = SOL min_out, not AMM. token_buy/token_sell = Jupiter v6 (still reaches graduated pump coins). pump_buy / pump_amm_* = cut from the live binary for size. Skip-debit: fund_pump_trader first, no in-ix vault debit. withdraw_pump_trader = root-only, not grant-gated, not an agent intent. SOL + token ATA sweep. Does not close trader. CORE issue_grant / create_account claim a pre-funded PDA. Agent stays 0 SOL. pay_token is live. Do not claim a live 0.01 USDC shop payment.",
+    "deploy = grant event, not ELF upload. swap = SOL min_out, not AMM. token_buy/token_sell = Jupiter v6 (still reaches graduated pump coins). pump_buy / pump_amm_* = cut from the live binary for size. Skip-debit: fund_pump_trader first, no in-ix vault debit. withdraw_pump_trader = root-only, not grant-gated, not an agent intent. SOL + token ATA sweep. Does not close trader. CORE issue_grant / create_account claim a pre-funded PDA. Agent stays 0 SOL. A live 0.01 USDC pay_token landed (sig 4nhDmpmy… slot 442631317). Merchant registry 3M5Thn45 live. This is a Solana USDC transfer from a grant-gated bot. Do not say merchants accept Grok Chain.",
     "sponsor_eligible means this grant may use YOUR paymaster. It is not a promise Grok Chain pays.",
     "Each root funds their own vault, paymaster, and relayer. Do not send SOL to EcSnayFc or E8Pm8RG6.",
     "The bot never holds SOL. Never give the bot a seed.",
@@ -374,5 +396,5 @@ export const howToPay = {
   ],
   refuseClose: "A refusal is the system working. Never look for a workaround, another token, or a different route.",
   status:
-    "pay_request, pay_token, merchant registry, and subscriptions are live on MAINNET INTENTS 3HCErAF (payments ELF, slot 442622147). Do not claim a live 0.01 USDC shop payment (no USDC in the vault). No keys, seeds, or keypair files belong on this site or in git.",
+    "pay_request, pay_token, merchant registry, and subscriptions are live on MAINNET INTENTS 3HCErAF (payments ELF, slot 442622147). A live 0.01 USDC pay_token landed: sig 4nhDmpmyzMu9UkRcMphHb41fkgu7hXa3CfwvZ4SKDBcTMDLbHytJuAm46Hz6suFLCRu5Rw1fTipyjJUSnv1WxBBx slot 442631317, 0.01 USDC to EcSnayFc ATA BhJew4E7vXVRhvBqKnCUARWfw5wFEC8YJ3XjL6GTPRGH. Merchant registry 3M5Thn45 live. token_buy 0.005 SOL → 0.523172 USDC, sig CL47DiLxsq1bqysJoXGt7d2M14qKvKBwQoKyBmHNW69561vscpJW8Pu4i595MCpEV33Vq3qVp3zrMEyPHZHa8kk. This is a Solana USDC transfer from a grant-gated bot. Do not say merchants accept Grok Chain. Do not invent TVL or partners. Agent 0 SOL. Pump trade ixs still cut. No keys, seeds, or keypair files belong on this site or in git.",
 } as const;
