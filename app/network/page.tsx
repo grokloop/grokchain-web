@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero, Stack } from "@/components/PageHero";
-import { DocsPrograms, FirstPay, ProvenAmm, ProvenCurve, SkipDebit, StatusLine } from "@/components/LiveStatus";
+import { CoreGrief, DocsPrograms, FirstPay, ProvenAmm, ProvenCurve, ProvenWithdraw, SkipDebit, StatusLine } from "@/components/LiveStatus";
 import { validators } from "@/lib/copy";
 
 export const metadata: Metadata = { title: "Network" };
@@ -26,6 +26,12 @@ export default function NetworkPage() {
         </div>
         <div className="mt-6">
           <SkipDebit />
+        </div>
+        <div className="mt-6">
+          <ProvenWithdraw />
+        </div>
+        <div className="mt-6">
+          <CoreGrief />
         </div>
         <DocsPrograms />
       </section>

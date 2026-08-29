@@ -1,4 +1,4 @@
-import { devnetWalk, firstAmmBuy, firstAmmSell, firstCurveBuy, firstCurveSell, firstPay, skipDebit, statusLine } from "@/lib/docs";
+import { coreGrief, devnetWalk, firstAmmBuy, firstAmmSell, firstCurveBuy, firstCurveSell, firstPay, firstWithdraw, skipDebit, statusLine } from "@/lib/docs";
 
 export function StatusLine() {
   return (
@@ -123,5 +123,13 @@ export function ProvenCurve() {
 
 export function SkipDebit() {
   return <ProvenSig {...skipDebit} />;
+}
+
+export function ProvenWithdraw() {
+  return <ProvenSig {...firstWithdraw} />;
+}
+
+export function CoreGrief() {
+  return <ProvenSig {...coreGrief} />;
 }
 

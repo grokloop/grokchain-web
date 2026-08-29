@@ -17,7 +17,7 @@ export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
 npx -y github:grokloop/grokchain-mcp`,
   afterLead: "Add the MCP to the Grok bot with",
   mcp: "npx -y github:grokloop/grokchain-mcp",
-  afterClose: "Ask it to pay, pump_amm_buy, pump_amm_sell, pump_buy, pump_sell, call, or deploy. remaining_accounts optional on pump_amm_*. Honest limits on /docs/use.",
+  afterClose: "Ask it to pay, pump_amm_buy, pump_amm_sell, pump_buy, pump_sell, call, or deploy. remaining_accounts optional on pump_amm_*. withdraw_pump_trader is root-only (human CLI), not an agent intent. Honest limits on /docs/use.",
   docsHref: "/docs/use",
   docsLabel: "Long walkthrough",
 } as const;
@@ -98,7 +98,7 @@ export const legal =
 
 export const status = {
   kicker: "Status",
-  line: "Pay, pump_buy, pump_sell, pump_amm_buy, pump_amm_sell, call, and deploy are live on Solana MAINNET. deploy is a grant event, not an ELF upload. swap is SOL min_out, not an AMM. pump is official pump.fun curve — buy and sell proven on a still-bonding mint. pump_amm_* is grant-gated PumpSwap. remaining_accounts is optional on pump_amm_* (derived from chain). Curve tools return CoinGraduated on a completed mint. Skip-debit: fund_pump_trader first, no in-ix vault debit. Agent stays 0 SOL. DEVNET still exists on the old ids if you want to rehearse.",
+  line: "Pay, pump_buy, pump_sell, pump_amm_buy, pump_amm_sell, call, and deploy are live on Solana MAINNET. deploy is a grant event, not an ELF upload. swap is SOL min_out, not an AMM. pump is official pump.fun curve — buy and sell proven on a still-bonding mint. pump_amm_* is grant-gated PumpSwap. remaining_accounts is optional on pump_amm_* (derived from chain). Curve tools return CoinGraduated on a completed mint. Skip-debit: fund_pump_trader first, no in-ix vault debit. withdraw_pump_trader is root-only (human CLI), not an agent intent. CORE grant-PDA grief fix is live. Agent stays 0 SOL. DEVNET still exists on the old ids if you want to rehearse.",
 } as const;
 
 export const nav = [
