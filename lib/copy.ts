@@ -17,7 +17,7 @@ export GROKCHAIN_ROOT_KEYPAIR=$HOME/.config/solana/id.json
 npx -y github:grokloop/grokchain-mcp`,
   afterLead: "Add the MCP to the Grok bot with",
   mcp: "npx -y github:grokloop/grokchain-mcp",
-  afterClose: "Ask it to pay_request, then pay_token, or pay, token_buy, token_sell, pump_amm_buy, pump_amm_sell, pump_buy, pump_sell, call, or deploy. Shop payments: /docs/pay. withdraw_pump_trader is root-only (human CLI). Honest limits on /docs/use.",
+  afterClose: "Ask it to pay_request, then pay_token, or pay, token_buy, token_sell, call, or deploy. Do not ask for pump_buy or pump_amm_* — those handlers are off the live binary. Shop payments: /docs/pay. withdraw_pump_trader is root-only (human CLI). Honest limits on /docs/use.",
   docsHref: "/docs/pay",
   docsLabel: "How a bot pays",
 } as const;
@@ -98,7 +98,7 @@ export const legal =
 
 export const status = {
   kicker: "Status",
-  line: "Pay, pump_buy, pump_sell, pump_amm_buy, pump_amm_sell, token_buy, token_sell, call, and deploy are live on Solana MAINNET. pay_token and subscriptions are in git; not on the live INTENTS binary yet. deploy is a grant event, not an ELF upload. swap is still SOL min_out, not an AMM. token_buy/token_sell is Jupiter v6. pump is official pump.fun curve — buy and sell proven on a still-bonding mint. pump_amm_* is grant-gated PumpSwap. remaining_accounts is optional on pump_amm_* (derived from chain). Curve tools return CoinGraduated on a completed mint. Skip-debit: fund_pump_trader first, no in-ix vault debit. withdraw_pump_trader is root-only (human CLI), not an agent intent. CORE grant-PDA grief fix is live. Agent stays 0 SOL. DEVNET still exists on the old ids if you want to rehearse.",
+  line: "Pay, pay_token, token_buy, token_sell, swap, call, and deploy are live on Solana MAINNET. pump_buy / pump_sell / pump_create / pump_amm_buy / pump_amm_sell were cut from the payments ELF for size. Jupiter token_buy/token_sell still reach graduated pump coins. deploy is a grant event, not an ELF upload. swap is still SOL min_out, not an AMM. Skip-debit: fund_pump_trader first, no in-ix vault debit. withdraw_pump_trader is root-only (human CLI), not an agent intent. CORE grant-PDA grief fix is live. Do not claim a live 0.01 USDC shop payment. Agent stays 0 SOL. DEVNET still exists on the old ids if you want to rehearse.",
 } as const;
 
 export const nav = [
