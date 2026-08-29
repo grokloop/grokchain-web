@@ -103,6 +103,7 @@ export const status = {
 
 export const nav = [
   { href: "/docs", label: "Docs" },
+  { href: "/built", label: "Built" },
   { href: "/network", label: "Network" },
   { href: "https://github.com/grokloop", label: "Git" },
 ] as const;
